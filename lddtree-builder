@@ -1,0 +1,10 @@
+#!/bin/sh
+
+PWD=$(pwd) || exit 1
+for COMMAND in "${@}"
+do
+	COMMAND_PATH=$(command -v "${COMMAND}") || command -V "${COMMAND}" || exit 1
+	lddtree --copy-to-tree "${PWD}" "${COMMAND_PATH}" || exit 1
+done
+mkdir -p bin dev etc proc run sys tmp var || exit 1
+touch etc/resolv.conf
