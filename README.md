@@ -150,17 +150,20 @@ nginx version: nginx/1.12.2
 If you're running from a [Gentoo][]-based system and have [Gentoolkit][] installed, you can also check the licenses of the content you've copied over:
 
 ```console
-$ gentoo-licenses
+$ gentoo-info
 packages:
   app-crypt/mit-krb5-1.15.2-r1
     URI: https://packages.gentoo.org/packages/app-crypt/mit-krb5
     licenses: openafs-krb5-a BSD MIT OPENLDAP BSD-2 HPND BSD-4 ISC RSA CC-BY-SA-3.0 || ( BSD-2 GPL-2+ )
+    security: cpe:/a:mit:kerberos (https://nvd.nist.gov/vuln/search/results?cpe=cpe%3A%2Fa%3Amit%3Akerberos&adv_search=true)
   dev-libs/libpcre-8.41-r1
     URI: https://packages.gentoo.org/packages/dev-libs/libpcre
     licenses: BSD
+    security: cpe:/a:pcre:pcre (https://nvd.nist.gov/vuln/search/results?cpe=cpe%3A%2Fa%3Apcre%3Apcre&adv_search=true)
   dev-libs/openssl-1.0.2n
     URI: https://packages.gentoo.org/packages/dev-libs/openssl
     licenses: openssl
+    security: cpe:/a:openssl:openssl (https://nvd.nist.gov/vuln/search/results?cpe=cpe%3A%2Fa%3Aopenssl%3Aopenssl&adv_search=true)
   sys-apps/keyutils-1.5.9-r4
     URI: https://packages.gentoo.org/packages/sys-apps/keyutils
     licenses: GPL-2 LGPL-2.1
@@ -170,9 +173,11 @@ packages:
   sys-libs/glibc-2.25-r9
     URI: https://packages.gentoo.org/packages/sys-libs/glibc
     licenses: LGPL-2.1+ BSD HPND ISC inner-net rc PCRE
+    security: cpe:/a:gnu:glibc (https://nvd.nist.gov/vuln/search/results?cpe=cpe%3A%2Fa%3Agnu%3Aglibc&adv_search=true)
   sys-libs/zlib-1.2.11-r1
     URI: https://packages.gentoo.org/packages/sys-libs/zlib
     licenses: ZLIB
+    security: cpe:/a:gnu:zlib (https://nvd.nist.gov/vuln/search/results?cpe=cpe%3A%2Fa%3Agnu%3Azlib&adv_search=true)
   www-servers/nginx-1.12.2-r1
     URI: https://packages.gentoo.org/packages/www-servers/nginx
     licenses: BSD-2 BSD SSLeay MIT GPL-2 GPL-2+

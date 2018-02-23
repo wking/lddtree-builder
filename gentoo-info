@@ -1,6 +1,10 @@
 #!/usr/bin/env python
 
 import os
+try:
+    from urllib.parse import urlencode
+except ImportError:  # python2
+    from urllib import urlencode
 
 import gentoolkit.helpers
 import gentoolkit.package
@@ -25,3 +29,12 @@ for package in sorted(packages):
     print('  {}'.format(package))
     print('    URI: {}'.format(uri))
     print('    licenses: {}'.format(licenses))
+    for upstream in package.metadata.upstream():
+        for uri, type in upstream.upstream_remoteids():
+            if type == 'cpe':
+                print('    security: {} (https://nvd.nist.gov/vuln/search/results?{})'.format(
+                    uri,
+                    urlencode({
+                        'adv_search': 'true',
+                        'cpe': uri,
+                    })))
