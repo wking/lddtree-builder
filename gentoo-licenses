@@ -20,4 +20,8 @@ for package_cpv in installed_packages:
 print('packages:')
 for package in sorted(packages):
     licenses = package.environment('LICENSE', fallback=False)
-    print('  {}: {}'.format(package, licenses))
+    uri = 'https://packages.gentoo.org/packages/{}'.format(
+        package.cp)
+    print('  {}'.format(package))
+    print('    URI: {}'.format(uri))
+    print('    licenses: {}'.format(licenses))
