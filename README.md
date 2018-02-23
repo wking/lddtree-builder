@@ -147,7 +147,24 @@ nginx version: nginx/1.12.2
 …
 ```
 
+If you're running from a [Gentoo][]-based system and have [Gentoolkit][] installed, you can also check the licenses of the content you've copied over:
+
+```console
+$ gentoo-licenses
+packages:
+  app-crypt/mit-krb5-1.15.2-r1: openafs-krb5-a BSD MIT OPENLDAP BSD-2 HPND BSD-4 ISC RSA CC-BY-SA-3.0 || ( BSD-2 GPL-2+ )
+  dev-libs/libpcre-8.41-r1: BSD
+  dev-libs/openssl-1.0.2n: openssl
+  sys-apps/keyutils-1.5.9-r4: GPL-2 LGPL-2.1
+  sys-libs/e2fsprogs-libs-1.43.6: GPL-2
+  sys-libs/glibc-2.25-r9: LGPL-2.1+ BSD HPND ISC inner-net rc PCRE
+  sys-libs/zlib-1.2.11-r1: ZLIB
+  www-servers/nginx-1.12.2-r1: BSD-2 BSD SSLeay MIT GPL-2 GPL-2+
+```
+
 [ccon]: https://github.com/wking/ccon
+[Gentoo]: https://gentoo.org/
+[Gentoolkit]: https://wiki.gentoo.org/wiki/Gentoolkit
 [lddtree-homepage]: https://wiki.gentoo.org/wiki/Hardened/PaX_Utilities
 [lddtree-source]: https://gitweb.gentoo.org/proj/pax-utils.git/tree/lddtree.py
 [runtime-spec]: https://github.com/opencontainers/runtime-spec

@@ -1,0 +1,23 @@
+#!/usr/bin/env python
+
+import os
+
+import gentoolkit.helpers
+import gentoolkit.package
+
+
+paths = set()
+for dirpath, dirnames, filenames in os.walk('.'):
+    for filename in filenames:
+        paths.add(os.path.join(dirpath[1:], filename))
+packages = set()
+installed_packages = gentoolkit.helpers.get_installed_cpvs()
+for package_cpv in installed_packages:
+    package = gentoolkit.package.Package(cpv=package_cpv)
+    contents = set(package.parsed_contents().keys())
+    if paths.intersection(contents):
+        packages.add(package)
+print('packages:')
+for package in sorted(packages):
+    licenses = package.environment('LICENSE', fallback=False)
+    print('  {}: {}'.format(package, licenses))
